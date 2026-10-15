@@ -1,10 +1,15 @@
 import React from 'react'
 import Profile from '../src/assets/profile.jpg'
+import { animate, delay } from 'framer-motion'
+import { easeIn } from 'motion'
+import { motion } from 'framer-motion'
+import { fadeInUp, nameTagAnimation, transitions } from '../src/Utilies/animation'
 const Hero = () => {
+  
     return (
         <div className='flex flex-col items-center justify-center  min-h-[70vh] text-center ' >
             {/* image and name animation */}
-        
+
 
             <div className='relative' >
                 <div className='relative mb-8' >
@@ -15,20 +20,24 @@ const Hero = () => {
                         <img src={Profile} alt="profile" className='w-32 h-32 rounded-full relative z-10' />
                     </div>
                     {/* aniamted name tag */}
-                    <div className='absolute -rotate-6 -top-0  -right-28 z-30 bg-white text-black px-4 py-2 rounded-full shadow-lg' >
+                    <motion.div  initial={nameTagAnimation.initial} animate={nameTagAnimation.animate}
+                     transition={nameTagAnimation.transition}  style={{
+                        transformOrigin:"center center"
+                     }} className='absolute -rotate-3 -top-0  -right-28 z-30 bg-white text-black px-4 py-2 rounded-full shadow-lg' >
                         <p className='text-sm font-medium ' >Bijoy Saha Tonmoy</p>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
+            
             {/* heading or titte */}
-            <h1 className='md:text-5xl text-3xl px-2 md:px-0 font-medium mb-4 max-w-xl ' >
+            <motion.h1  variants={fadeInUp}  initial="initial"  animate="animate" transition={{...transitions.default,delay:0.4}} className='md:text-5xl text-3xl px-2 md:px-0 font-medium mb-4 max-w-xl ' >
                 <span className='bg-gradient-to-r from-white vai-gray-300 to-gray-500 text-transparent bg-clip-text ' >
                     Hi! I’ Bijoy Saha</span><br />
                 <span className='bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 text-transparent bg-clip-text' > frontend web developer </span>
                 <br />
-                <span className='bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 text-transparent bg-clip-text' >based in Bangladesh.</span></h1>
+                <span className='bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 text-transparent bg-clip-text' >based in Bangladesh.</span></motion.h1>
             {/* button */}
-            <button className='mt-8 py-4 px-12 cursor-pointer border border-gray-600 text-gray-600 hover:border-gray-400 hover:text-white transition-colors rounded-full' >Latest Shots</button>
+            <motion.button  variants={fadeInUp}  initial="initial"  animate="animate" transition={{...transitions.default,delay:0.6}} className='mt-8 py-4 px-12 cursor-pointer border border-gray-600 text-gray-600 hover:border-gray-400 hover:text-white transition-colors rounded-full' >Latest Shots</motion.button>
         </div>
     )
 }
