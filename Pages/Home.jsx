@@ -1,9 +1,9 @@
 import React from 'react'
-import Partner from '../Compoents/Partner'
-import TechStack from '../Compoents/Techstack'
-import Hero from '../Compoents/Hero'
+import Partner from '../Components/Partner'
+import TechStack from '../Components/Techstack'
+import Hero from '../Components/Hero'
 
-import Services from '../Compoents/Services'
+import Services from '../Components/Services'
 import About from './About'
 import ContactMe from './ContactMe'
 const Home = () => {

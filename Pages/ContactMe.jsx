@@ -7,8 +7,8 @@ import { FaGithub } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
-import Container from '../Compoents/Container';
-import Flex from '../Compoents/Flex';
+import Container from '../Components/Container';
+import Flex from '../Components/Flex';
 const ContactMe = () => {
   return (
      <section className='bg-[#F7F5F0] py-12' >

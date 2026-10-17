@@ -1,17 +1,18 @@
 import React, { useState } from 'react'
-import Rootlayout from '../Compoents/Rootlayout'
-import Navbar from '../Compoents/Navbar'
-import Cursor from '../Compoents/CustomCursor'
+import Rootlayout from '../Components/Rootlayout'
+import Navbar from '../Components/Navbar'
+import Cursor from '../Components/CustomCursor'
 import Home from '../Pages/Home'
 import {Route,Routes,createBrowserRouter,RouterProvider, createRoutesFromElements} from 'react-router' 
 import About from '../Pages/About'
 import Projects from '../Pages/Projects'
 
-import CustomCursor from '../../../CustomCursor'
+
 
 import Service from '../Pages/Service'
 import ContactMe from '../Pages/ContactMe'
 const App = () => {
+  
 
    const router =createBrowserRouter(
     createRoutesFromElements(<Route path='/'  element={<Rootlayout/>}>

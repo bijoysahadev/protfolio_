@@ -1,7 +1,7 @@
 import React from 'react'
-import Flex from '../Compoents/Flex'
-import Container from '../Compoents/Container'
-import Image from '../Compoents/Image'
+import Flex from '../Components/Flex'
+import Container from '../Components/Container'
+import Image from '../Components/Image'
 import AboutMe from '../src/assets/AboutMe.png'
 
 const About = () => {
