@@ -6,8 +6,9 @@ const Navbar = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     return (
-        <header className='flex justify-between items-center p-6 relative border-b  border-gray-600'>
-            <div className='flex items-center gap-2' ><span className='p-1  bg-gray-50/80 rounded-full text-black '>
+        <header  className='border-b  border-gray-600' >
+            <div className='max-w-6xl mx-auto flex justify-between items-center p-6 relative ' >
+                   <div className='flex items-center gap-2' ><span className='p-1  bg-gray-50/80 rounded-full text-black '>
                 <img src={Bijoy} className='w-3 h-4 rounded-full ' alt="" /></span>
                 <span className={`${isMenuOpen ? "hidden" : "block"}`} >bijoysaha144@gmail.com</span></div>
             {/* mobile menu button */}
@@ -51,6 +52,8 @@ const Navbar = () => {
                     <div className='fixed md:hidden inset-0 bg-black/50 z-30 ' onClick={() => setIsMenuOpen(false)} ></div>
                 )
             }
+            </div>
+         
         </header>
     )
 }

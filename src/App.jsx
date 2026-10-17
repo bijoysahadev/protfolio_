@@ -6,10 +6,11 @@ import Home from '../Pages/Home'
 import {Route,Routes,createBrowserRouter,RouterProvider, createRoutesFromElements} from 'react-router' 
 import About from '../Pages/About'
 import Projects from '../Pages/Projects'
-import Contact from '../Pages/Contact'
+
 import CustomCursor from '../../../CustomCursor'
 
 import Service from '../Pages/Service'
+import ContactMe from '../Pages/ContactMe'
 const App = () => {
 
    const router =createBrowserRouter(
@@ -20,7 +21,7 @@ const App = () => {
     <Route path='projects' element={<Projects/>} />
     
     <Route path='service' element={<Service/>} />
-    <Route path='contact' element={<Contact/>} />
+    <Route path='contact' element={<ContactMe/>} />
   
     </Route>)
   )
