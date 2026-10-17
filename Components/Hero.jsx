@@ -4,6 +4,8 @@ import { animate, delay } from 'framer-motion'
 import { easeIn } from 'motion'
 import { motion } from 'framer-motion'
 import { fadeInUp, nameTagAnimation, transitions } from '../src/Utilies/animation'
+import Flex from '../Components/Flex'
+import { Link } from 'react-router'
 const Hero = () => {
   
     return (
@@ -38,7 +40,21 @@ const Hero = () => {
                 <br />
                 <span className='bg-gradient-to-r from-indigo-800 via-slate-800 to-gray-900 !text-transparent bg-clip-text' >based in Bangladesh.</span></motion.h1>
             {/* button */}
-            <motion.button  variants={fadeInUp}  initial="initial"  animate="animate" transition={{...transitions.default,delay:0.6}} className='mt-8 py-4 px-12 cursor-pointer border border-gray-600 text-gray-600 hover:border-gray-400 hover:text-white transition-colors rounded-full' >Latest Shots</motion.button>
+          <Flex className={`items-center justify-center`} >
+              <motion.button  variants={fadeInUp}  initial="initial"  animate="animate" transition={{...transitions.default,delay:0.6}} className='mt-8 py-4 px-10 cursor-pointer border-2 border-indigo-950/30 text-indigo-950 font-medium hover:border-indigo-950 hover:bg-indigo-950/5 transition-all duration-300 rounded-full' >
+              <Link to={`contact`} >Hire Me</Link></motion.button>
+         <motion.a 
+                    href="/resume.pdf" 
+                    download="Bijoy_Saha_CV.pdf"
+                    variants={fadeInUp} 
+                    initial="initial" 
+                    animate="animate" 
+                    transition={{...transitions.default, delay: 0.6}} 
+                    className='mt-8 py-4 px-10 cursor-pointer bg-indigo-950 text-white font-medium hover:bg-purple-900 transition-all duration-300 rounded-full shadow-lg shadow-indigo-950/10 inline-block'
+                >
+                    Download CV
+                </motion.a>
+          </Flex>
         </div>
 
 
