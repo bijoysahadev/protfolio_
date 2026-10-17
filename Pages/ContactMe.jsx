@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { FaLocationDot } from "react-icons/fa6";
 import { CiHeadphones } from "react-icons/ci";
@@ -9,7 +9,35 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import Container from '../Components/Container';
 import Flex from '../Components/Flex';
+import toast, { Toaster } from 'react-hot-toast';
 const ContactMe = () => {
+
+
+  // 
+
+
+
+ const [result, setResult] = useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    formData.append("access_key", "886f1aa0-d685-4531-bb2a-11b45d11cb7c");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+    setResult(data.success ? "Success!" : "Error");
+    if(data.success) {
+  toast.success("Your Message Is Sent!")
+    }
+  };
+
+  
+  // 
   return (
      <section className='bg-[#F7F5F0] py-12' >
       <Container>
@@ -66,17 +94,17 @@ const ContactMe = () => {
             {/* social links */}
           </div>
           <div className='  bg-white  !w-full md:w-[60%] p-5 '>
-            <form className='flex flex-col gap-6' >
+            <form onSubmit={onSubmit} className='flex flex-col gap-6' >
               {/* name */}
               <div className='flex ' >
 
                 <label className='block w-1/2 text-xs font-bold uppercase tracking-wider text-black w-1/2 ' htmlFor="">Name
-                  <input className='block mt-2 px-4 py-3.5 w-full bg-white border border-gray-300 rounded-lg text-sm text-black placeholder:text-gray-400 focus:outline-none focus:border-black transition-all ' type="text" name="" id="" placeholder='Enter Your Name Please' />
+                  <input  name="name" className='block mt-2 px-4 py-3.5 w-full bg-white border border-gray-300 rounded-lg text-sm text-black placeholder:text-gray-400 focus:outline-none focus:border-black transition-all ' type="text"  id="name" placeholder='Enter Your Name Please' />
                 </label>
                 {/* name */}
                 {/* mail */}
                 <label className='ml-3 block w-1/2 text-xs font-bold uppercase tracking-wider text-black ' htmlFor="">Email Address
-                  <input className='block mt-2 px-4 py-3.5 w-full bg-white border border-gray-300 rounded-lg text-sm text-black placeholder:text-gray-400 focus:outline-none focus:border-black transition-all' type="text" name="" id="" placeholder='bijoysaha144@gmail.com' />
+                  <input className='block mt-2 px-4 py-3.5 w-full bg-white border border-gray-300 rounded-lg text-sm text-black placeholder:text-gray-400 focus:outline-none focus:border-black transition-all' type="email" name="email" id="email" placeholder='bijoysaha144@gmail.com' />
                 </label>
               </div>
   {/* name */}
@@ -84,14 +112,14 @@ const ContactMe = () => {
                 {/* subject */}
               <div className='flex' >
                 <label className='block w-full text-xs font-bold uppercase tracking-wider text-black' htmlFor="">Subject
-                  <input className='block mt-2 px-4 py-3.5 w-full bg-white border border-gray-300 rounded-lg text-sm text-black placeholder:text-gray-400 focus:outline-none focus:border-black transition-all ' type="text" placeholder='Subject' />
+                  <input  name='' className='block mt-2 px-4 py-3.5 w-full bg-white border border-gray-300 rounded-lg text-sm text-black placeholder:text-gray-400 focus:outline-none focus:border-black transition-all ' type="text" placeholder='Subject' />
                 </label>
               </div>
               {/* subject */}
               {/* Message */}
               <div>
                 <label className='block w-full text-xs font-bold uppercase tracking-wider text-black' htmlFor="">Your Message
-                  <textarea rows="5" name="" id="" className='block mt-2 p-4 w-full bg-white border border-gray-300 rounded-lg text-sm text-black placeholder:text-gray-400 focus:outline-none focus:border-black transition-all resize-none' ></textarea>
+                  <textarea  rows="5" name="message" id="" className='block mt-2 p-4 w-full bg-white border border-gray-300 rounded-lg text-sm text-black placeholder:text-gray-400 focus:outline-none focus:border-black transition-all resize-none' ></textarea>
                 </label>
               </div>
               {/* message */}
@@ -108,6 +136,7 @@ const ContactMe = () => {
           </div>
         </Flex>
       </Container>
+       <Toaster />
     </section>
   )
 }
