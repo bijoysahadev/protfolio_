@@ -17,7 +17,7 @@ const ContactMe = () => {
 
 
 
- const [result, setResult] = useState("");
+  const [result, setResult] = useState("");
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -31,17 +31,17 @@ const ContactMe = () => {
 
     const data = await response.json();
     setResult(data.success ? "Success!" : "Error");
-    if(data.success) {
-  toast.success("Your Message Is Sent!")
+    if (data.success) {
+      toast.success("Your Message Is Sent!")
     }
   };
 
-  
+
   // 
   return (
-     <section className='bg-[#F7F5F0] py-12' >
+    <section className='bg-[#F7F5F0] py-12' >
       <Container>
-{/* flex flex-col lg:flex-row items-stretch justify-between gap-6 */}
+        {/* flex flex-col lg:flex-row items-stretch justify-between gap-6 */}
         <h1 className={`text-center font-bold text-[56px] mx-auto text-black  `} >Contact ME</h1>
         <Flex className={` flex flex-col lg:flex-row items-stretch justify-between gap-6  `} >
           <div className='  !w-full md:w-[40%] bg-white  p-6 flex flex-col items-start justify-center gap-3 '>
@@ -98,28 +98,28 @@ const ContactMe = () => {
               {/* name */}
               <div className='flex ' >
 
-                <label className='block w-1/2 text-xs font-bold uppercase tracking-wider text-black w-1/2 ' htmlFor="">Name
-                  <input  name="name" className='block mt-2 px-4 py-3.5 w-full bg-white border border-gray-300 rounded-lg text-sm text-black placeholder:text-gray-400 focus:outline-none focus:border-black transition-all ' type="text"  id="name" placeholder='Enter Your Name Please' />
+                <label className='block w-1/2 text-xs font-bold uppercase tracking-wider text-black w-1/2 ' htmlFor="name">Name
+                  <input required name="name" className='block mt-2 px-4 py-3.5 w-full bg-white border border-gray-300 rounded-lg text-sm text-black placeholder:text-gray-400 focus:outline-none focus:border-black transition-all ' type="text" id="name" placeholder='Enter Your Name Please' />
                 </label>
                 {/* name */}
                 {/* mail */}
-                <label className='ml-3 block w-1/2 text-xs font-bold uppercase tracking-wider text-black ' htmlFor="">Email Address
-                  <input className='block mt-2 px-4 py-3.5 w-full bg-white border border-gray-300 rounded-lg text-sm text-black placeholder:text-gray-400 focus:outline-none focus:border-black transition-all' type="email" name="email" id="email" placeholder='bijoysaha144@gmail.com' />
+                <label className='ml-3 block w-1/2 text-xs font-bold uppercase tracking-wider text-black ' htmlFor="email">Email Address
+                  <input required className='block mt-2 px-4 py-3.5 w-full bg-white border border-gray-300 rounded-lg text-sm text-black placeholder:text-gray-400 focus:outline-none focus:border-black transition-all' type="email" name="email" id="email" placeholder='bijoysaha144@gmail.com' />
                 </label>
               </div>
-  {/* name */}
-                {/* mail */}
-                {/* subject */}
+              {/* name */}
+              {/* mail */}
+              {/* subject */}
               <div className='flex' >
-                <label className='block w-full text-xs font-bold uppercase tracking-wider text-black' htmlFor="">Subject
-                  <input  name='' className='block mt-2 px-4 py-3.5 w-full bg-white border border-gray-300 rounded-lg text-sm text-black placeholder:text-gray-400 focus:outline-none focus:border-black transition-all ' type="text" placeholder='Subject' />
+                <label className='block w-full text-xs font-bold uppercase tracking-wider text-black' htmlFor="subject">Subject
+                  <input required name='subject' className='block mt-2 px-4 py-3.5 w-full bg-white border border-gray-300 rounded-lg text-sm text-black placeholder:text-gray-400 focus:outline-none focus:border-black transition-all ' type="text" placeholder='Subject' />
                 </label>
               </div>
               {/* subject */}
               {/* Message */}
               <div>
-                <label className='block w-full text-xs font-bold uppercase tracking-wider text-black' htmlFor="">Your Message
-                  <textarea  rows="5" name="message" id="" className='block mt-2 p-4 w-full bg-white border border-gray-300 rounded-lg text-sm text-black placeholder:text-gray-400 focus:outline-none focus:border-black transition-all resize-none' ></textarea>
+                <label className='block w-full text-xs font-bold uppercase tracking-wider text-black' htmlFor="message">Your Message
+                  <textarea rows="5" name="message" id="message" className='block mt-2 p-4 w-full bg-white border border-gray-300 rounded-lg text-sm text-black placeholder:text-gray-400 focus:outline-none focus:border-black transition-all resize-none' ></textarea>
                 </label>
               </div>
               {/* message */}
@@ -136,7 +136,7 @@ const ContactMe = () => {
           </div>
         </Flex>
       </Container>
-       <Toaster />
+      <Toaster />
     </section>
   )
 }
